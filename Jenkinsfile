@@ -17,10 +17,10 @@ node {
 		}
 		pipeline{
 		agent {
-			docker { image 'node:7-alpine' }
+			docker { image "pact-demo:${env.BUILD_ID}" }
 		}
 		
-        stage('Test') {
+        stage('inside container') {
             
                 sh 'node --version'
             
