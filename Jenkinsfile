@@ -1,5 +1,5 @@
 pipeline {
-	stages {
+	
 		stage ('test'){
 			sh 'ls -ltr'
 			checkout scm
@@ -19,12 +19,10 @@ pipeline {
 		}
 		
         stage('Test') {
-            steps {
+            
                 sh 'node --version'
-            }
+            
         }
-    }
+    
 }
-
-
 
