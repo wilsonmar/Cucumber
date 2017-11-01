@@ -1,5 +1,4 @@
 node {
-	
 	stage ('test'){
 		sh 'ls -ltr'
 		checkout scm
@@ -14,6 +13,14 @@ node {
 			sh 'pwd'
 			}
 	}
+	docker.image("pact-demo:${env.BUILD_ID}").inside {
+    stage("inside container") {
+        sh "pwd"
+	    sh "ls -ltr"          
+	}
 }
+
+
+
 
 
