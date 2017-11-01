@@ -1,4 +1,4 @@
-pipeline {
+node {
 	
 		stage ('test'){
 			sh 'ls -ltr'
@@ -14,6 +14,7 @@ pipeline {
 				sh 'ls -ltr'
 			}
 		}
+		pipeline{
 		agent {
 			docker { image 'node:7-alpine' }
 		}
@@ -23,6 +24,7 @@ pipeline {
                 sh 'node --version'
             
         }
+		}
     
 }
 
