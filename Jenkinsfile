@@ -8,7 +8,7 @@ node {
 		sh 'docker images'
 		def customImage = docker.build("pact-demo:${env.BUILD_ID}")
 		sh 'docker images'
-		print "$customImage"
+		//print "$customImage"
 		echo customImage
 		customImage.inside {
 			sh 'ls -ltr'
