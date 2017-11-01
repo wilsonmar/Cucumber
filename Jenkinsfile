@@ -14,13 +14,11 @@ node {
 			}
 	}
 	docker.image("pact-demo:${env.BUILD_ID}").inside {
-    stage("inside container") {
-        sh "pwd"
-	    sh "ls -ltr"          
+		stage("inside container") {
+			sh "pwd"
+			sh "ls -ltr"          
+		}
 	}
 }
-
-
-
 
 
