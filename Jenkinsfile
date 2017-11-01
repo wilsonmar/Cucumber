@@ -6,21 +6,26 @@ node {
 		echo 'inside jenkins'
 		sh 'whoami'
 		sh 'docker images'
-		def customImage = docker.build("pact-demo:${env.BUILD_ID}")
+		//def customImage = docker.build("pact-demo:${env.BUILD_ID}")
 		sh 'docker images'
 		//print "$customImage"
 		//echo customImage
-		customImage.inside {
+		/*customImage.inside {
 			sh 'ls -ltr'
 			sh 'pwd'
-			}
-	}
-	docker.image("pact-demo:${env.BUILD_ID}").inside {
+			}*/
+	
+	/*docker.image("pact-demo:${env.BUILD_ID}").inside {
 		stage("inside container") {
 			sh "pwd"
 			sh "ls -ltr"          
 		}
-	}
+	}*/
+	docker.build("pact-demo:${env.BUILD_ID}").inside {
+	 sh 'ls -ltr'
+	 sh 'pwd'
+  }
+  }
 }
 
 
