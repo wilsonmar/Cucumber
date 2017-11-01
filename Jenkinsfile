@@ -14,6 +14,7 @@ node {
 				sh 'ls -ltr'
 			}
 		}
+		}
 		pipeline{
 		agent {
 			docker { image 'node:7-alpine' }
@@ -23,8 +24,8 @@ node {
             
                 sh 'node --version'
             
-        }
+			}
 		}
     
-}
+
 
