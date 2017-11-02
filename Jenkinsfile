@@ -4,7 +4,7 @@ node{
     	checkout scm	    
     	sh 'ls -ltr'    	   
     	sh 'docker images'        
-	    def customImage = docker.build("Cucumber-test:${env.BUILD_ID}")	
+	    def customImage = docker.build("cucumber-test:${env.BUILD_ID}")	
 	    sh 'docker images'	  
       customImage.inside {
 	        sh 'pwd'
