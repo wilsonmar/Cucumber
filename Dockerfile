@@ -7,6 +7,6 @@ RUN apt-get update && apt-get install -y \
   maven 
 
 RUN mvn -version
-RUN git clone https://github.com/cucumber/cucumber-java-skeleton.git
+RUN git clone https://github.com/cucumber/cucumber-jvm.git
 CMD ls
-RUN cd cucumber-java-skeleton && mvn test
+RUN cd cucumber-jvm/examples/java-calculator && mvn test
