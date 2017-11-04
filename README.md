@@ -1,3 +1,19 @@
+This repository contains what is used to create a sample DevSecOps pipeline to build and test an Angular 4 web app.
+
+1. The trigger is a git push from a laptop to the BitBucket cloud repository.
+2. A hook fires off a Jenkins job.
+3. The Jenkins job checks out SCM and builds. This is the first stage within Jenkins.
+4. Jenkins runs a set of tests in parallel:
+   * REST Assured
+   * PACT for Contract Testing
+   * JMeter for performance testing
+   * Cucumber for BDD and testing using Selenium with Protractor
+   * ZAP for penetration security testing
+5. Jenkins emails reports.
+6. Jenkins cleans up workspace.
+
+<hr />
+
 "# Cucumber" tool based on Behavior Driven Development (BDD) framework which is used to write acceptance tests for the web application. Test is triggered from Maven. Dockerfile in the repository does all the server setup over ubuntu image and installs Maven, GIT, JDK.
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
